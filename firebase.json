@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "jhihyulin",
-    "public": "public",
+    "public": "out",
     "ignore": [
       "firebase.json",
       "**/.*",

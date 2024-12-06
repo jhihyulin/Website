@@ -93,7 +93,7 @@ export default function Home() {
               radius="full"
               className={`${item.className} shadow-lg font-bold`}
               onPress={() => {
-                window.open(item.link);
+                window.open(item.link, "_self");
               }}
             >
               {item.name}
@@ -109,7 +109,7 @@ export default function Home() {
               radius="full"
               variant="faded"
               onPress={() => {
-                window.open(item.link);
+                window.open(item.link, "_self");
               }}
             />
           ))}
@@ -150,7 +150,7 @@ export default function Home() {
                       radius="full"
                       variant="faded"
                       onPress={() => {
-                        window.open("mailto:jy@saget.me");
+                        window.open("mailto:jy@saget.me", "_self");
                       }}
                     >
                       傳送電子郵件

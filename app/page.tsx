@@ -123,14 +123,6 @@ export default function Home() {
             isOpen={isOpen}
             onOpenChange={onOpenChange}
             backdrop="blur"
-            classNames={{
-              base: `${
-                typeof window !== "undefined" &&
-                window.matchMedia("(prefers-color-scheme: dark)").matches
-                  ? "dark"
-                  : ""
-              }`,
-            }}
           >
             <ModalContent>
               <ModalHeader className="flex flex-col gap-1">Email</ModalHeader>

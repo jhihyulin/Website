@@ -3,6 +3,7 @@ import { Noto_Sans, Noto_Sans_TC } from "next/font/google";
 import { NextUIProvider } from "@nextui-org/react";
 import { Link } from "@nextui-org/link";
 import { ThemeProvider } from "next-themes";
+import { ThemeSwitcher } from "../components/theme-switcher";
 import "./globals.css";
 
 const notoSans = Noto_Sans({ subsets: ["latin"] });
@@ -53,6 +54,7 @@ export default function RootLayout({
               >
                 Repository
               </Link>
+              <ThemeSwitcher />
               <p className="text-sm text-gray-500">
                 &copy; {new Date().getFullYear()} saget.me
               </p>

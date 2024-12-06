@@ -137,7 +137,7 @@ export default function Home() {
               {(onClose) => (
                 <>
                   <ModalHeader className="flex flex-col gap-1">
-                    電子郵件
+                    Email
                   </ModalHeader>
                   <ModalBody>
                     <Snippet hideSymbol size="lg">
@@ -153,7 +153,7 @@ export default function Home() {
                         window.open("mailto:jy@saget.me", "_self");
                       }}
                     >
-                      傳送電子郵件
+                      Send Email
                     </Button>
                   </ModalFooter>
                 </>

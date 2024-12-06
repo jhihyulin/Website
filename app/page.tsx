@@ -17,7 +17,6 @@ import { FaTelegram } from "react-icons/fa6";
 import { FaEnvelope } from "react-icons/fa6";
 import { FaUniversity } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
-import { FaCopy } from "react-icons/fa6";
 import React from "react";
 
 const LocationLinks = [
@@ -134,30 +133,24 @@ export default function Home() {
             }}
           >
             <ModalContent>
-              {(onClose) => (
-                <>
-                  <ModalHeader className="flex flex-col gap-1">
-                    Email
-                  </ModalHeader>
-                  <ModalBody>
-                    <Snippet hideSymbol size="lg">
-                      jy@saget.me
-                    </Snippet>
-                  </ModalBody>
-                  <ModalFooter>
-                    <Button
-                      startContent={<FaArrowRight />}
-                      radius="full"
-                      variant="faded"
-                      onPress={() => {
-                        window.open("mailto:jy@saget.me", "_self");
-                      }}
-                    >
-                      Send Email
-                    </Button>
-                  </ModalFooter>
-                </>
-              )}
+              <ModalHeader className="flex flex-col gap-1">Email</ModalHeader>
+              <ModalBody>
+                <Snippet hideSymbol size="lg">
+                  jy@saget.me
+                </Snippet>
+              </ModalBody>
+              <ModalFooter>
+                <Button
+                  startContent={<FaArrowRight />}
+                  radius="full"
+                  variant="faded"
+                  onPress={() => {
+                    window.open("mailto:jy@saget.me", "_self");
+                  }}
+                >
+                  Send Email
+                </Button>
+              </ModalFooter>
             </ModalContent>
           </Modal>
         </div>

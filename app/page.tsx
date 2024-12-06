@@ -1,7 +1,14 @@
 "use client";
 
 import { Button } from "@nextui-org/react";
+import { useDisclosure } from "@nextui-org/react";
+import { Modal } from "@nextui-org/react";
+import { ModalContent } from "@nextui-org/react";
+import { ModalHeader } from "@nextui-org/react";
+import { ModalBody } from "@nextui-org/react";
+import { ModalFooter } from "@nextui-org/react";
 import { Avatar } from "@nextui-org/avatar";
+import { Snippet } from "@nextui-org/snippet";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
@@ -9,6 +16,8 @@ import { FaDiscord } from "react-icons/fa6";
 import { FaTelegram } from "react-icons/fa6";
 import { FaEnvelope } from "react-icons/fa6";
 import { FaUniversity } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa6";
+import React from "react";
 
 const LocationLinks = [
   {
@@ -43,14 +52,11 @@ const mediaLinks = [
     link: "https://t.me/jhihyulin",
     icon: <FaTelegram size={24} />,
   },
-  {
-    name: "jy@saget.me",
-    link: "mailto:jy@saget.me",
-    icon: <FaEnvelope size={24} />,
-  },
 ];
 
 export default function Home() {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-4 row-start-2 items-center sm:items-start">
@@ -86,7 +92,7 @@ export default function Home() {
               radius="full"
               className={`${item.className} shadow-lg font-bold`}
               onPress={() => {
-                window.open(item.link);
+                window.open(item.link, "_self");
               }}
             >
               {item.name}
@@ -96,18 +102,45 @@ export default function Home() {
         <div className="flex flex-wrap gap-4 items-center justify-center">
           {mediaLinks.map((item, index) => (
             <Button
-              isIconOnly={item.name ? false : true}
+              isIconOnly
               key={index}
               startContent={item.icon}
               radius="full"
               variant="faded"
               onPress={() => {
-                window.open(item.link);
+                window.open(item.link, "_self");
               }}
-            >
-              {item.name ? item.name : ""}
-            </Button>
+            />
           ))}
+          <Button
+            isIconOnly
+            startContent={<FaEnvelope size={24} />}
+            radius="full"
+            variant="faded"
+            onPress={onOpen}
+          />
+          <Modal isOpen={isOpen} onOpenChange={onOpenChange} backdrop="blur">
+            <ModalContent>
+              <ModalHeader className="flex flex-col gap-1">Email</ModalHeader>
+              <ModalBody>
+                <Snippet hideSymbol size="lg">
+                  jy@saget.me
+                </Snippet>
+              </ModalBody>
+              <ModalFooter>
+                <Button
+                  startContent={<FaArrowRight />}
+                  radius="full"
+                  variant="faded"
+                  onPress={() => {
+                    window.open("mailto:jy@saget.me", "_self");
+                  }}
+                >
+                  Send Email
+                </Button>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
         </div>
       </main>
     </div>

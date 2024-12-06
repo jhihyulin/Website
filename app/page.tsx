@@ -119,11 +119,7 @@ export default function Home() {
             variant="faded"
             onPress={onOpen}
           />
-          <Modal
-            isOpen={isOpen}
-            onOpenChange={onOpenChange}
-            backdrop="blur"
-          >
+          <Modal isOpen={isOpen} onOpenChange={onOpenChange} backdrop="blur">
             <ModalContent>
               <ModalHeader className="flex flex-col gap-1">Email</ModalHeader>
               <ModalBody>

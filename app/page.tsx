@@ -31,13 +31,13 @@ const LocationLinks = [
   {
     name: "Taiwan",
     link: "https://www.google.com/maps/search/?api=1&query=taiwan",
-    icon: <FaLocationDot />,
+    icon: FaLocationDot,
     className: "bg-gradient-to-br from-[#000095] to-[#FE0000] text-white",
   },
   {
     name: "NDHU",
     link: "https://www.ndhu.edu.tw/",
-    icon: <FaUniversity />,
+    icon: FaUniversity,
     className:
       "bg-gradient-to-br from-[#0B4A2A] via-[#3A6B12] to-[#76610F] text-white",
   },
@@ -46,45 +46,45 @@ const LocationLinks = [
 const mediaLinks = [
   {
     link: "https://github.com/jhihyulin",
-    icon: <FaGithub size={24} />,
+    icon: FaGithub,
   },
   {
     link: "https://www.instagram.com/jhih_yu_lin",
-    icon: <FaInstagram size={24} />,
+    icon: FaInstagram,
   },
   {
     link: "https://discordapp.com/users/561051528065187862",
-    icon: <FaDiscord size={24} />,
+    icon: FaDiscord,
   },
   {
     link: "https://t.me/jhihyulin",
-    icon: <FaTelegram size={24} />,
+    icon: FaTelegram,
   },
 ];
 
 const cryptoAddress = [
   {
-    symbol: <SiBitcoin />,
+    symbol: SiBitcoin,
     name: "Taproot",
     address: "bc1pse2ks9enzy24gujs29p0xy7rskct2snxm33vkpqg47m59syrcfvqwzpy0c",
   },
   {
-    symbol: <SiEthereum />,
+    symbol: SiEthereum,
     name: "EVM",
     address: "0x52fd70e3ee2f822815967bcd044c6015a3b0fefb",
   },
   {
-    symbol: <SiSolana />,
+    symbol: SiSolana,
     name: "Solana",
     address: "3ZmCBQeue15WzWm6bbt7fTbMMeeuN9f3haQ1rChZyajy",
   },
   {
-    symbol: <SiTon />,
+    symbol: SiTon,
     name: "The Open Network",
     address: "UQCBOkBR63ss7jSmcSo-Bwpkkj-ffLpKsox2IAcr9L3XbPOy",
   },
   {
-    symbol: <SiSui />,
+    symbol: SiSui,
     name: "Sui Network",
     address:
       "0x5d8faa2abe5fe6cfdc76d67c6993812236b35c7d493e1e266bf911e3b357fc21",
@@ -141,7 +141,7 @@ export default function Home() {
               {LocationLinks.map((item, index) => (
                 <Button
                   key={index}
-                  startContent={item.icon}
+                  startContent={<item.icon />}
                   className={`${item.className} shadow-lg font-bold`}
                   onPress={() => {
                     window.open(item.link, "_self");
@@ -156,7 +156,7 @@ export default function Home() {
                 <Button
                   isIconOnly
                   key={index}
-                  startContent={item.icon}
+                  startContent={<item.icon size={24} />}
                   onPress={() => {
                     window.open(item.link, "_self");
                   }}
@@ -178,7 +178,15 @@ export default function Home() {
                     Email
                   </ModalHeader>
                   <ModalBody>
-                    <CustomSnippet hideSymbol size="lg">
+                    <CustomSnippet
+                      symbol={
+                        <div className="flex items-center">
+                          <FaEnvelope />
+                          &nbsp;
+                        </div>
+                      }
+                      size="lg"
+                    >
                       jy@saget.me
                     </CustomSnippet>
                   </ModalBody>
@@ -223,7 +231,7 @@ export default function Home() {
                         <CustomSnippet
                           symbol={
                             <div className="flex items-center">
-                              {item.symbol}
+                              {<item.symbol />}
                               &nbsp;
                             </div>
                           }

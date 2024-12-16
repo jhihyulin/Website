@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans, Noto_Sans_TC } from "next/font/google";
 import { NextUIProvider } from "@nextui-org/react";
-import { Link } from "@nextui-org/link";
 import { ThemeProvider } from "next-themes";
 import { ThemeSwitcher } from "../components/theme-switcher";
 import "./globals.css";
@@ -45,15 +44,6 @@ export default function RootLayout({
           <ThemeProvider attribute="class" enableSystem={true}>
             {children}
             <footer className="flex flex-col gap-2 items-center justify-center">
-              <p className="text-sm text-gray-500">Built with Next.js</p>
-              <Link
-                href="https://github.com/jhihyulin/Website"
-                color="foreground"
-                size="sm"
-                underline="hover"
-              >
-                Repository
-              </Link>
               <ThemeSwitcher />
               <p className="text-sm text-gray-500">
                 &copy; {new Date().getFullYear()} saget.me

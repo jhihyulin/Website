@@ -227,16 +227,12 @@ export default function Home() {
                   <ModalBody>
                     {cryptoAddress.map((item, index) => (
                       <div key={index} className="w-full flex flex-col">
-                        <p className="font-bold">{item.name}</p>
-                        <CustomSnippet
-                          symbol={
-                            <div className="flex items-center">
-                              {<item.symbol />}
-                              &nbsp;
-                            </div>
-                          }
-                          size="lg"
-                        >
+                        <p className="flex font-bold items-center">
+                          <item.symbol className="items-center" />
+                          &nbsp;
+                          {item.name}
+                        </p>
+                        <CustomSnippet hideSymbol size="lg">
                           {item.address}
                         </CustomSnippet>
                       </div>

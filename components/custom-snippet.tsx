@@ -22,7 +22,6 @@ export default function CustomSnippet({
 }: Readonly<SnippetProps>) {
   return (
     <Snippet
-      children={children}
       size={size}
       radius={radius}
       symbol={symbol}
@@ -38,10 +37,12 @@ export default function CustomSnippet({
       copyButtonProps={copyButtonProps}
       disableAnimation={disableAnimation}
       classNames={{
-        pre: "flex text-ellipsis overflow-hidden",
+        pre: "truncate",
         ...classNames,
       }}
-    />
+    >
+      {children}
+    </Snippet>
   );
 }
 

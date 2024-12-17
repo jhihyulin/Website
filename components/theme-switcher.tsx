@@ -28,8 +28,6 @@ export default function ThemeSwitcher() {
           <MdBrightness2 />
         )
       }
-      radius="full"
-      variant="faded"
       onPress={() => {
         const i = modes.indexOf(theme || "system");
         const next = modes[(i + 1) % modes.length];

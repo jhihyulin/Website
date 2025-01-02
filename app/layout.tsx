@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans, Noto_Sans_TC } from "next/font/google";
 import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider } from "next-themes";
-import { ThemeSwitcher } from "../components/theme-switcher";
+import { Footer } from "../components/footer";
 import "./globals.css";
 
 const notoSans = Noto_Sans({ subsets: ["latin"] });
@@ -43,12 +43,7 @@ export default function RootLayout({
         <NextUIProvider>
           <ThemeProvider attribute="class" enableSystem={true}>
             {children}
-            <footer className="flex flex-col gap-2 items-center justify-center">
-              <ThemeSwitcher />
-              <p className="text-sm text-gray-500">
-                &copy; {new Date().getFullYear()} saget.me
-              </p>
-            </footer>
+            <Footer />
           </ThemeProvider>
         </NextUIProvider>
       </body>
